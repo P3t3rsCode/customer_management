@@ -22,6 +22,10 @@ Route::group([
     Route::post('me', 'AuthController@me');
 
 });
-Route::get('test',function(){
-    return 'test';
-});
+
+
+
+Route::resource('customers','CustomersController')->middleware('jwt.auth');
+
+
+

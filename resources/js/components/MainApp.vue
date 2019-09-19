@@ -14,9 +14,6 @@ import AppHeader from "./AppHeader";
 export default {
   components: {
     AppHeader
-  },
-  mounted() {
-    console.log("Component mounted.");
   }
 };
 </script>

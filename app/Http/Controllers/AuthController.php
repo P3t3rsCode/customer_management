@@ -30,7 +30,8 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
 
         if ($token = $this->guard()->attempt($credentials)) {
-            return $this->respondWithToken($token);
+            $b_token=auth('api')->attempt($credentials);
+            return $this->respondWithToken($b_token);
         }
 
         return response()->json(['error' => 'Unauthorized'], 401);
